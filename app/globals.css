@@ -1,0 +1,540 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .dropdown-anchor {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    z-index: 50;
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .user-select-none {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+textarea:focus {
+  outline: none;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in-95 {
+  from {
+    transform: scale(0.95);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+.zoom-in-95 {
+  animation-name: zoom-in-95;
+}
+
+.slide-in-left {
+  animation-name: slide-in-left;
+}
+
+.slide-in-right {
+  animation-name: slide-in-right;
+}
+
+.slide-in-up {
+  animation-name: slide-in-up;
+}
+
+.duration-100 {
+  animation-duration: 100ms;
+}
+
+.duration-200 {
+  animation-duration: 200ms;
+}
+
+.duration-300 {
+  animation-duration: 300ms;
+}
+
+@layer base {
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .prose h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .prose h1 {
+    color: rgb(250 250 250);
+  }
+
+  .prose h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .prose h2 {
+    color: rgb(250 250 250);
+  }
+
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .prose h3 {
+    color: rgb(250 250 250);
+  }
+
+  .prose h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .prose h4 {
+    color: rgb(250 250 250);
+  }
+
+  .prose h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .prose h5 {
+    color: rgb(250 250 250);
+  }
+
+  .prose h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .prose h6 {
+    color: rgb(250 250 250);
+  }
+
+  .prose p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(63 63 70);
+  }
+
+  .dark .prose p {
+    color: rgb(228 228 231);
+  }
+
+  .prose strong {
+    font-weight: 600;
+    color: rgb(24 24 27);
+  }
+
+  .dark .prose strong {
+    color: rgb(250 250 250);
+  }
+
+  .prose em {
+    font-style: italic;
+  }
+
+  .prose code {
+    background-color: rgb(244 244 245);
+    color: rgb(24 24 27);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .dark .prose code {
+    background-color: rgb(39 39 42);
+    color: rgb(250 250 250);
+  }
+
+  .prose blockquote {
+    border-left: 4px solid rgb(228 228 231);
+    padding-left: 1rem;
+    font-style: italic;
+    color: rgb(113 113 122);
+    margin: 1.5rem 0;
+  }
+
+  .dark .prose blockquote {
+    border-left-color: rgb(63 63 70);
+    color: rgb(161 161 170);
+  }
+
+  .prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .prose li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(63 63 70);
+  }
+
+  .dark .prose li {
+    color: rgb(228 228 231);
+  }
+
+  .ProseMirror h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .ProseMirror h1 {
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .ProseMirror h2 {
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .ProseMirror h3 {
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .ProseMirror h4 {
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .ProseMirror h5 {
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(24 24 27);
+  }
+
+  .dark .ProseMirror h6 {
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(63 63 70);
+  }
+
+  .dark .ProseMirror p {
+    color: rgb(228 228 231);
+  }
+
+  .ProseMirror strong {
+    font-weight: 600;
+    color: rgb(24 24 27);
+  }
+
+  .dark .ProseMirror strong {
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror em {
+    font-style: italic;
+  }
+
+  .ProseMirror code {
+    background-color: rgb(244 244 245);
+    color: rgb(24 24 27);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  .dark .ProseMirror code {
+    background-color: rgb(39 39 42);
+    color: rgb(250 250 250);
+  }
+
+  .ProseMirror blockquote {
+    border-left: 4px solid rgb(228 228 231);
+    padding-left: 1rem;
+    font-style: italic;
+    color: rgb(113 113 122);
+    margin: 1.5rem 0;
+  }
+
+  .dark .ProseMirror blockquote {
+    border-left-color: rgb(63 63 70);
+    color: rgb(161 161 170);
+  }
+
+  .ProseMirror ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .ProseMirror ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .ProseMirror li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: rgb(63 63 70);
+  }
+
+  .dark .ProseMirror li {
+    color: rgb(228 228 231);
+  }
+}
+
+@media (max-width: 768px) {
+  .prose h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .prose h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .ProseMirror h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .ProseMirror h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .ProseMirror h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  /* FIX Bug 3: Ensure ProseMirror content is visible on mobile */
+  .ProseMirror {
+    min-height: 200px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .ProseMirror p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: rgb(63 63 70);
+  }
+
+  .dark .ProseMirror p {
+    color: rgb(228 228 231);
+  }
+
+  .prose {
+    min-height: 200px;
+  }
+
+  .prose p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
