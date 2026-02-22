@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   publisher: "DecoyPhrase",
   applicationName: "DecoyPhrase",
   generator: "Next.js",
-  metadataBase: new URL("https://decoyphrase.arweave.net"),
+  metadataBase: new URL("https://decoyphrasestorage.arweave.net"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://decoyphrase.arweave.net",
+    url: "https://decoyphrasestorage.arweave.net",
     title: "DecoyPhrase - Secure Arweave Vault",
     description:
       "Zero-knowledge encrypted digital vault powered by Arweave blockchain. Secure your files with permanent, decentralized storage.",

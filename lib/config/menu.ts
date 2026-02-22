@@ -22,13 +22,13 @@ export const HELP_MENU_ITEMS = [
   {
     label: "Feedback & Suggestions",
     icon: MessageSquare,
-    href: "https://decoyphrase-web.vercel.app/feedback/",
+    href: "https://decoyphrase.arweave.net/feedback/",
     external: true,
   },
   {
     label: "Donate",
     icon: Heart,
-    href: "https://decoyphrase-web.vercel.app/",
+    href: "https://decoyphrase.arweave.net/",
     external: true,
   },
 ];
