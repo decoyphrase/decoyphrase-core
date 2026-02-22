@@ -110,6 +110,8 @@ export default function Sidebar({
     {
       label: "Donate",
       icon: Heart,
+      href: "https://decoyphrase.arweave.net/donate/",
+      external: true,
       action: () => {
         setIsProfileMenuOpen(false);
       },
@@ -117,6 +119,8 @@ export default function Sidebar({
     {
       label: UI_LABELS.DOWNLOAD_DECOY_GENERATOR,
       icon: Download,
+      href: "https://decoyphrase.arweave.net/download/",
+      external: true,
       action: () => {
         setIsProfileMenuOpen(false);
       },

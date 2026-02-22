@@ -28,7 +28,7 @@ export const HELP_MENU_ITEMS = [
   {
     label: "Donate",
     icon: Heart,
-    href: "https://decoyphrase.arweave.net/",
+    href: "https://decoyphrase.arweave.net/donate/",
     external: true,
   },
 ];
